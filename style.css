@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url(andrea-de-santis-KF52HaIDtyM-unsplash.jpg);
+  backdrop-filter: blur(2px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+nav {
+  background-color: white;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav li {
+  height: 50px;
+}
+
+nav a {
+  height: 100%;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 1.3rem;
+}
+
+nav a:hover {
+  background-color: rgba(235, 10, 10, 0.719);
+  color: white;
+}
+
+nav li:first-child {
+  margin-right: auto;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Hide the sidebar off-screen */
+  width: 250px;
+  height: 100vh;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0; /* Start hidden */
+}
+
+.sidebar.open {
+  right: 0; /* Slide in the sidebar */
+  opacity: 1; /* Become visible */
+}
+
+.sidebar li {
+  width: 100%;
+}
+
+.sidebar a {
+  width: 100%;
+}
+
+.menu-button {
+  display: none;
+}
+
+.card-container {
+  display: flex;
+  gap: 1px; /* Adds space between the cards */
+  padding-top: 80px;
+
+  justify-content: center;
+}
+
+.card {
+  width: 360px;
+  height: 195px;
+  margin: 55px;
+  border-radius: 15px;
+  display: flex;
+  background-color: bisque;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow */
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  color: white;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+@media (max-width: 500px) {
+  .hideOnMobile {
+    display: none;
+  }
+  .menu-button {
+    display: block;
+  }
+}
